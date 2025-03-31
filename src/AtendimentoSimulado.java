@@ -6,7 +6,8 @@ public class AtendimentoSimulado { ;
 
     public void processo(JTextArea areatexto){
         try{
-            areatexto.append(Thread.currentThread().getName() + " esperando atendimento...\n");
+            areatexto.append("\n"+ Thread.currentThread().getName() + " esperando atendimento...\n");
+            Thread.sleep(1000);
 
             lock.lock();
             if(Thread.currentThread().isInterrupted()){
