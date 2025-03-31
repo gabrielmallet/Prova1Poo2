@@ -26,17 +26,26 @@ public class Main extends JFrame {
         botaostart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AtendimentoSimulado atendimentoSimulado = new AtendimentoSimulado();
-                cliente1 = new Cliente(areatexto, atendimentoSimulado);
-                cliente2 = new Cliente(areatexto, atendimentoSimulado);
-                cliente3 = new Cliente(areatexto, atendimentoSimulado);
-                cliente4 = new Cliente(areatexto, atendimentoSimulado);
-                cliente5 = new Cliente(areatexto, atendimentoSimulado);
-                cliente1.start();
-                cliente2.start();
-                cliente3.start();
-                cliente4.start();
-                cliente5.start();
+                if((cliente1 != null && cliente1.isAlive()) ||
+                        (cliente2 != null && cliente2.isAlive()) ||
+                        (cliente3 != null && cliente3.isAlive()) ||
+                        (cliente4 != null && cliente4.isAlive()) ||
+                        (cliente5 != null && cliente5.isAlive())){
+                    JOptionPane.showMessageDialog(null,"Threads já estão em execução");
+                    return;
+                }
+                    AtendimentoSimulado atendimentoSimulado = new AtendimentoSimulado();
+                    cliente1 = new Cliente(areatexto, atendimentoSimulado);
+                    cliente2 = new Cliente(areatexto, atendimentoSimulado);
+                    cliente3 = new Cliente(areatexto, atendimentoSimulado);
+                    cliente4 = new Cliente(areatexto, atendimentoSimulado);
+                    cliente5 = new Cliente(areatexto, atendimentoSimulado);
+                    cliente1.start();
+                    cliente2.start();
+                    cliente3.start();
+                    cliente4.start();
+                    cliente5.start();
+
             }
         });
         add(botaostart);

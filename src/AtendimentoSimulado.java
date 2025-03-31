@@ -12,7 +12,7 @@ public class AtendimentoSimulado { ;
             if(Thread.currentThread().isInterrupted()){
                 return;
             }
-            areatexto.append(Thread.currentThread().getName() + " sendo atendido...\n");
+            areatexto.append("\n"+ Thread.currentThread().getName() + " sendo atendido...\n");
             long tempoInicio = System.currentTimeMillis();
             Thread.sleep((long)(Math. random() * 5000));
             long tempoFim = System.currentTimeMillis();
@@ -20,7 +20,7 @@ public class AtendimentoSimulado { ;
             areatexto.append(Thread.currentThread().getName() + " Atendimento Finalizado! (Atendimento durou " + tempoTotalAtendimento + " ms)\n");
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            areatexto.append(Thread.currentThread().getName() + " ATENDIMENTO INTERROMPIDO!\n");
+            areatexto.append("\n"+ Thread.currentThread().getName() + " ATENDIMENTO INTERROMPIDO!\n");
         }finally {
             lock.unlock();
         }
