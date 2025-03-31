@@ -2,14 +2,14 @@ import javax.swing.*;
 
 public class Cliente extends Thread{
     private JTextArea areatexto;
-    private RetraintLock retraintLock;
+    private AtendimentoSimulado atendimentoSimulado;
 
-    public Cliente(JTextArea areatexto,RetraintLock retraintLock){
+    public Cliente(JTextArea areatexto, AtendimentoSimulado atendimentoSimulado){
         this.areatexto = areatexto;
-        this.retraintLock = retraintLock;
+        this.atendimentoSimulado = atendimentoSimulado;
     }
 
     public void run(){
-        retraintLock.processo(areatexto);
+        atendimentoSimulado.processo(areatexto);
     }
 }

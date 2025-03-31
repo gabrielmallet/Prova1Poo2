@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class RetraintLock{ ;
+public class AtendimentoSimulado { ;
     private final ReentrantLock lock = new ReentrantLock();
 
     public void processo(JTextArea areatexto){

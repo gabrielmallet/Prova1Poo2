@@ -26,12 +26,12 @@ public class Main extends JFrame {
         botaostart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RetraintLock retraintLock = new RetraintLock();
-                cliente1 = new Cliente(areatexto,retraintLock);
-                cliente2 = new Cliente(areatexto,retraintLock);
-                cliente3 = new Cliente(areatexto,retraintLock);
-                cliente4 = new Cliente(areatexto,retraintLock);
-                cliente5 = new Cliente(areatexto,retraintLock);
+                AtendimentoSimulado atendimentoSimulado = new AtendimentoSimulado();
+                cliente1 = new Cliente(areatexto, atendimentoSimulado);
+                cliente2 = new Cliente(areatexto, atendimentoSimulado);
+                cliente3 = new Cliente(areatexto, atendimentoSimulado);
+                cliente4 = new Cliente(areatexto, atendimentoSimulado);
+                cliente5 = new Cliente(areatexto, atendimentoSimulado);
                 cliente1.start();
                 cliente2.start();
                 cliente3.start();
