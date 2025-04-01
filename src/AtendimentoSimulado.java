@@ -16,7 +16,8 @@ public class AtendimentoSimulado { ;
 
             areatexto.append("\n"+ Thread.currentThread().getName() + " sendo atendido...\n");
             long tempoInicio = System.currentTimeMillis();
-            Thread.sleep((long)(Math. random() * 5000));
+
+            Thread.sleep((long)(Math. random() * 5000));//Simulando Processo
 
             long tempoFim = System.currentTimeMillis();
             long tempoTotalAtendimento = tempoFim - tempoInicio;
