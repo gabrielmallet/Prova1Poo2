@@ -8,6 +8,7 @@ public class Main extends JFrame {
     private JTextArea areatexto;
     private JScrollPane scrollpane;
     private Cliente cliente1,cliente2,cliente3,cliente4,cliente5;
+    private int numeroCliente;
 
 
     public Main(){
@@ -35,11 +36,11 @@ public class Main extends JFrame {
                     return;
                 }
                     AtendimentoSimulado atendimentoSimulado = new AtendimentoSimulado();
-                    cliente1 = new Cliente(areatexto, atendimentoSimulado);
-                    cliente2 = new Cliente(areatexto, atendimentoSimulado);
-                    cliente3 = new Cliente(areatexto, atendimentoSimulado);
-                    cliente4 = new Cliente(areatexto, atendimentoSimulado);
-                    cliente5 = new Cliente(areatexto, atendimentoSimulado);
+                    cliente1 = new Cliente(areatexto, atendimentoSimulado,numeroCliente);
+                    cliente2 = new Cliente(areatexto, atendimentoSimulado, numeroCliente);
+                    cliente3 = new Cliente(areatexto, atendimentoSimulado,numeroCliente);
+                    cliente4 = new Cliente(areatexto, atendimentoSimulado,numeroCliente);
+                    cliente5 = new Cliente(areatexto, atendimentoSimulado,numeroCliente);
                     cliente1.start();
                     cliente2.start();
                     cliente3.start();

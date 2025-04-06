@@ -3,12 +3,15 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class AtendimentoSimulado { ;
     private final ReentrantLock lock = new ReentrantLock();
+    private int numeroCliente = 0;
 
     public void processo(JTextArea areatexto){
         try{
+            numeroCliente++;
+            Thread.currentThread().setName("Cliente "+ numeroCliente);
+
             areatexto.append("\n"+ Thread.currentThread().getName() + " esperando atendimento...\n");
 
-            Thread.sleep(1000);
             lock.lock();
             if(Thread.currentThread().isInterrupted()){
                 return;
